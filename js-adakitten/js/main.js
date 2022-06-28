@@ -95,8 +95,38 @@ if( kittenDesc1.includes(descrSearchText) ) {
   }
 
 
-  const newForm = document.querySelector('.js_new-form');
 
-  if (newForm.classList.contains('collapsed')) {
-   newForm.classList.remove('collapsed');
-  } 
+  const iconMenu = document.querySelector('.fa-plus-circle');
+
+  iconMenu.addEventListener ("click", ()=> {
+    event.preventDefault();
+    const newForm = document.querySelector('.js_new-form');
+    console.log(newForm);
+        if (newForm.classList.contains('collapsed')) 
+        { newForm.classList.remove('collapsed');
+        } else {
+          newForm.classList.add('collapsed');
+        }
+   });
+
+   const addButton = document.querySelector(".js-btn-add");
+
+   addButton.addEventListener ("click", () => {
+      event.preventDefault();
+
+      const inputDesc = document.querySelector('.js-input-desc');
+      const inputPhoto = document.querySelector('.js-input-photo');
+      const inputName = document.querySelector('.js-input-name');
+      const labelMesageError = document.querySelector('.js-label-error');
+
+
+      const valueDesc = inputDesc.value;
+      const valuePhoto = inputPhoto.value;
+      const valueName = inputName.value;
+
+      if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+        labelMesageError.innerHTML =  "Debe rellenar todos los valores";
+      } else {
+        console.log("Funciona");
+      }
+   });

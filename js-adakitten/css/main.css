@@ -215,3 +215,13 @@ li {
   margin: 5px;
   color: white;
 }
+
+.rotate {
+  transform: rotate(45deg);
+  transition-duration: 350ms;
+}
+
+.un-rotate {
+  transform: rotate(0);
+  transition-duration: 350ms;
+}

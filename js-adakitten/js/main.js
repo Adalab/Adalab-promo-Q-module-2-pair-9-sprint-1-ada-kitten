@@ -102,10 +102,15 @@ if( kittenDesc1.includes(descrSearchText) ) {
     event.preventDefault();
     const newForm = document.querySelector('.js_new-form');
     console.log(newForm);
-        if (newForm.classList.contains('collapsed')) 
-        { newForm.classList.remove('collapsed');
+        if (newForm.classList.contains('collapsed')){ 
+          newForm.classList.remove('collapsed');
+          iconMenu.classList.remove('un-rotate');
+          iconMenu.classList.add('rotate');
+          
         } else {
           newForm.classList.add('collapsed');
+          iconMenu.classList.remove('rotate');
+          iconMenu.classList.add('un-rotate');
         }
    });
 
